@@ -1,0 +1,72 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+export default function AddBookmark({ post }) {
+    const [isBookmarked, setIsBookmarked] = useState(false);
+    const [bookmarkId, setBookmarkId] = useState(null);  // Store the bookmark ID for deletion
+
+    const addBookmark = () => {
+        axios.post(`http://localhost:8000/api/v1/bookmark/`, {
+            user: localStorage.getItem('user_id'),
+            post: post.id
+        }, {
+            headers: {
+                Authorization: `Token ${localStorage.getItem('auth_token')}`
+            }
+        })
+            .then(response => {
+                setIsBookmarked(true);
+                setBookmarkId(response.data.id);  // Store the new bookmark ID after adding
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    };
+
+    const removeBookmark = () => {
+        if (bookmarkId) {
+            axios.delete(`http://localhost:8000/api/v1/bookmark/${bookmarkId}/`, {
+                headers: {
+                    Authorization: `Token ${localStorage.getItem('auth_token')}`
+                }
+            })
+                .then(response => {
+                    setIsBookmarked(false);
+                    setBookmarkId(null);  // Reset the bookmark ID after successful removal
+                    console.log(response.data);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    };
+
+    useEffect(() => {
+        // Fetch bookmarks to check if the current post is bookmarked
+        axios.get(`http://localhost:8000/api/v1/bookmark/`, {
+            headers: {
+                Authorization: `Token ${localStorage.getItem('auth_token')}`
+            }
+        })
+            .then(response => {
+                const bookmark = response.data.results.find(bookmark => bookmark.post === post.id);
+                if (bookmark) {
+                    setIsBookmarked(true);
+                    setBookmarkId(bookmark.id);  // Store the bookmark ID for future deletion
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, [post.id]); // Depend on `post.id` to refetch when a new post is passed
+
+    return (
+        <div>
+            {isBookmarked
+                ? <i onClick={removeBookmark} className='bx bxs-bookmark' style={{ color: 'yellow' }}></i>
+                : <i onClick={addBookmark} className="bx bx-bookmark"></i>
+            }
+        </div>
+    );
+}

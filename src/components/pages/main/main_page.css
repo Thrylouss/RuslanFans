@@ -1,0 +1,91 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border-bottom: 1px solid #bababa;
+    background-color: white;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px solid #bababa;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #8b97a4;
+}
+
+.post-controllers {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.post-controllers div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-footer i:hover {
+    cursor: pointer;
+}
+
+.post-user {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.post-user:hover {
+    cursor: pointer;
+}
+
+.post-user h2:hover {
+    text-decoration: underline;
+}
+
+.post-user div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-user div img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #d2e2ff;
+}

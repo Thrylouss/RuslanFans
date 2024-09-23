@@ -1,0 +1,86 @@
+.card-info-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
+    font-weight: 300;
+    border-bottom: 1px solid #bababa;
+    font-size: 30px;
+}
+
+.card-info-choose {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card-info-choose p {
+    width: 50%;
+    padding: 25px;
+    border-bottom: 1px solid #bababa;
+}
+
+.card-info-choose p:hover {
+    background-color: #d2e2ff;
+    cursor: pointer;
+}
+
+.card-info-header div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.card-info-header i {
+    cursor: pointer;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid #bababa;
+    gap: 20px;
+}
+
+.add-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: 700;
+    background-color: white;
+    box-shadow: 0 0 10px #7a7a7a;
+    border-bottom: 1px solid #bababa;
+    gap: 20px;
+    position: fixed;
+    width: 400px;
+    top: 20%;
+    left: 38%;
+}
+
+.form-add-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-weight: 700;
+    gap: 20px;
+}
+
+.form-add-card input, select{
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #bababa;
+    width: 100%;
+}

@@ -1,0 +1,28 @@
+.bookmarks-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    font-weight: 300;
+    border-bottom: 1px solid #bababa;
+}
+
+.bookmarks-header i:hover {
+    cursor: pointer;
+}
+
+.post-book {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #bababa;
+}
+
+.post-book img {
+    width: 250px;
+    height: 250px;
+}
+
